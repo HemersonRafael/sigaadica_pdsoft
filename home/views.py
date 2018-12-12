@@ -13,39 +13,39 @@ class ProfessorViewSet(viewsets.ModelViewSet):
     Visualiza e edita Professor.
     """
     serializer_class = ProfessorSerializer
-    queryset = Professor.objects.all().order_by('nome')
+    queryset = Professor.objects.all() 
 
 class DepartamentoViewSet(viewsets.ModelViewSet):
     """
     Visualiza e edita Departamentos.
     """
     serializer_class = DepartamentoSerializer
-    queryset = Departamento.objects.all().order_by('nome')
+    queryset = Departamento.objects.all() 
 
 class CursoViewSet(viewsets.ModelViewSet):
     """
     Visualiza e edita Curso.
     """
     serializer_class = CursoSerializer
-    queryset = Curso.objects.all().order_by('nome')
+    queryset = Curso.objects.all() 
     
 class DisciplinaViewSet(viewsets.ModelViewSet):
     """
     Visualiza e edita Disciplina.
     """
     serializer_class = DisciplinaSerializer
-    queryset = Disciplina.objects.all().order_by('nome')
+    queryset = Disciplina.objects.all() 
 
 class TurmaViewSet(viewsets.ModelViewSet):
     """
     Visualiza e edita Turma.
     """
     serializer_class = TurmaSerializer
-    queryset = Turma.objects.all().order_by('nome')
+    queryset = Turma.objects.all() 
 
 class AvaliacaoViewSet(viewsets.ModelViewSet):
     """
     Visualiza e edita Avaliacao.
     """
     serializer_class = AvaliacaoSerializer
-    queryset = Avaliacao.objects.all().order_by('nome')
+    queryset = Avaliacao.objects.all()

@@ -17,15 +17,20 @@ from django.contrib import admin
 from django.conf.urls import url, include
 from django.urls import path
 from rest_framework import routers
-from home.views import ProfessorViewSet 
-#DepartamentoViewSet, DisciplinatoViewSet, TurmaViewSet, AvaliacaoViewSet
+from home.views import ProfessorViewSet
+from home.views import DepartamentoViewSet 
+from home.views import CursoViewSet
+from home.views import DisciplinaViewSet
+from home.views import TurmaViewSet
+from home.views import AvaliacaoViewSet
 
 router = routers.DefaultRouter()
 router.register(r'professores', ProfessorViewSet)
-#router.register(r'departamentos', DepartamentoViewSet)
-#router.register(r'disciplinas', DisciplinatoViewSet)
-#router.register(r'turmas', TurmaViewSet)
-#router.register(r'avaliacoes', AvaliacaoViewSet)
+router.register(r'departamentos', DepartamentoViewSet)
+router.register(r'cursos', CursoViewSet)
+router.register(r'disciplinas', DisciplinaViewSet)
+router.register(r'turmas', TurmaViewSet)
+router.register(r'avaliacoes', AvaliacaoViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls)),

@@ -1,6 +1,7 @@
 from django.db import models
 
 class Professor(models.Model):
+    
     codigo = models.CharField(max_length=100)
     nome = models.CharField(max_length=100)    
     ativo = models.BooleanField(default=True)
