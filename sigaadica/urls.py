@@ -33,7 +33,8 @@ router.register(r'turmas', TurmaViewSet)
 router.register(r'avaliacoes', AvaliacaoViewSet)
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
+    url(r'^api/', include(router.urls)),
     path('admin/', admin.site.urls),
+    url(r'^', include('home.urls')),
     url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework'))
 ]
