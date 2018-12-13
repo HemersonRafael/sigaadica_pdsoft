@@ -7,4 +7,4 @@ class CursoForm(forms.ModelForm):
 
     class Meta:
         model = Curso
-        fields = ('codigo', 'nome', 'ativo')
+        fields = ('codigo', 'nome', 'departamento', 'ativo')

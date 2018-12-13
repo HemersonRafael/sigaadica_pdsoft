@@ -17,9 +17,15 @@
                 <th scope="row">{{curso.pk}}</th>
                 <td><a href="{% url 'detalhar' pk=curso.pk %}">{{ curso.nome }}</a></td>
                 <td>{{curso.codigo}}</td>
-                <td><button><span class="glyphicon glyphicon-pencil"></span></button></td>
+                <td><a class="btn btn-default" href="{% url 'editar' pk=curso.pk %}">
+                    <span class="glyphicon glyphicon-pencil"></span>
+                </a>
+                <a class="btn btn-default" href="{% url 'remover' pk=curso.pk %}">
+                        <span class="glyphicon glyphicon-trash"></span>
+                    </a></td>
             </tr>
         {% endfor %}
     </tbody>
 </table>
+<a class="btn btn-primary" href="{% url 'criar' %}" role="button">Adicionar Curso</a>
 {% endblock %}

@@ -37,6 +37,8 @@ class Departamento(models.Model):
 class Curso(models.Model):
     codigo = models.IntegerField('codigo')
     nome = models.CharField('Nome', max_length=100)
+    departamento = models.ForeignKey(Departamento, verbose_name='Departamento', on_delete=models.CASCADE, 
+            blank=True, null=True)
     
     ativo = models.BooleanField('Ativo', default=True)
     data_criacao = models.DateTimeField('Criado em', auto_now_add=True)

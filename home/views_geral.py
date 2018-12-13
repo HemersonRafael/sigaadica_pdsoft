@@ -39,5 +39,6 @@ def detalhar(request, pk):
     return render(request, 'site/detalhar.html', {'curso': curso})
 
 def remover(request, pk):
-    Curso.objects.delete(pk=pk)
+    curso = Curso.objects.get(pk=pk)
+    curso.delete()
     return redirect('index')
