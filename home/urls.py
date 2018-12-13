@@ -3,7 +3,7 @@ from django.conf.urls import url
 
 urlpatterns = [
 	url(r'^$', views_geral.index, name = 'index'),
-	url(r'^editar/$', views_geral.editar, name = 'editar'),
-	#url(r'^(?P<atalho>[-\w]+)/$', views.search_estabelecimento, name='estabelecimento'),
-	#url(r'^contato$', views.contato, name = 'contato'),
+	url(r'^criar/$', views_geral.criar, name = 'criar'),
+	url(r'^editar/(?P<pk>[0-9]+)/$', views_geral.editar, name = 'editar'),
+	url(r'^(?P<pk>[-\w]+)/$', views_geral.detalhar, name = 'detalhar'),
 ]

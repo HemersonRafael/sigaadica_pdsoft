@@ -1,6 +1,25 @@
-<p>Estamos aqui</p>
+{% extends 'site/base.html' %}
 
-
-{% for curso in cursos %}
-    <p>{{ curso.nome }}</p>
-{% endfor %}
+{% block content %}
+    <h1>Lista de Curso</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Código</th>
+            <th scope="col">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for curso in cursos %}
+            <tr>
+                <th scope="row">{{curso.pk}}</th>
+                <td><a href="{% url 'detalhar' pk=curso.pk %}">{{ curso.nome }}</a></td>
+                <td>{{curso.codigo}}</td>
+                <td><button><span class="glyphicon glyphicon-pencil"></span></button></td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
